@@ -19,7 +19,7 @@ body {
 }
 
 /* Nav */
-nav {
+.site-nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -30,14 +30,14 @@ nav {
     border-bottom: 1px solid #1a1a1a;
 }
 
-nav .container {
+.site-nav .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 56px;
 }
 
-nav .logo {
+.site-nav .logo {
     font-size: 15px;
     font-weight: 700;
     color: #f4f4f5;
@@ -45,13 +45,13 @@ nav .logo {
     letter-spacing: -0.3px;
 }
 
-nav .nav-links {
+.site-nav .nav-links {
     display: flex;
     align-items: center;
     gap: 24px;
 }
 
-nav .nav-links a {
+.site-nav .nav-links a {
     font-size: 13px;
     font-weight: 500;
     color: #a1a1aa;
@@ -59,7 +59,7 @@ nav .nav-links a {
     transition: color 0.2s;
 }
 
-nav .nav-links a:hover {
+.site-nav .nav-links a:hover {
     color: #f4f4f5;
 }
 
