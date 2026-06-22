@@ -1,43 +1,172 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Kegiatan</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almas Rausan Fikri — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<header class="isi d-flex text-center text-white">
-			<div class="container my-auto">
-				<div class="row">
-					<div class="col-lg-12 my-auto">	
-						<h1 class="text-uppercase faded">
-							<strong>Acara startup terkeren tahun ini</strong>
-						</h1>
-						<hr>
-					</div>
-					<div class="col-lg-12 my-auto">
-						<!-- Begin MailChimp Signup Form -->
-						
-						<style type="text/css">
-							#mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; }
-							/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-							   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-						</style>
-						<div id="mc_embed_signup">
-						<form action="https://tumblr.us12.list-manage.com/subscribe/post?u=15a3059d164ee3247ac2f0bcd&amp;id=e15198e64c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-						    <div id="mc_embed_signup_scroll">
-						    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-						    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_15a3059d164ee3247ac2f0bcd_e15198e64c" tabindex="-1" value=""></div>
-						    <div class="clear"><input type="submit" value="Find Out More" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary btn-xl"></div>
-						    </div>
-						</form>
-						</div>
+    <header>
+        <div class="container">
+            <img src="https://ugc.production.linktr.ee/tY0P5cPUSriXYQikn5ts_Ke8DjXr4bdtGn0rn?io=true&size=avatar-v3_0" alt="" class="avatar">
+            <h1>Almas Rausan Fikri</h1>
+            <p class="tagline">Data Engineer & Analyst</p>
+            <p class="bio">Full-stack data professional with 4+ years of experience in data analysis, engineering, and governance.</p>
+            <div class="badge-row">
+                <a href="mailto:almas.rausanf@gmail.com" class="badge">almas.rausanf@gmail.com</a>
+                <a href="https://www.linkedin.com/in/alrafikri/" class="badge">LinkedIn</a>
+                <a href="https://github.com/Alrafikri" class="badge">GitHub</a>
+                <a href="https://www.kaggle.com/alrafikri" class="badge">Kaggle</a>
+            </div>
+        </div>
+    </header>
 
-						<!--End mc_embed_signup-->
-						<!-- <button class="btn btn-primary btn-xl">Find Out More</button> -->
-					</div>
-				</div>
-			</div>
-	</header>
+    <main class="container">
+
+        <section>
+            <h2>Data Engineering</h2>
+            <div class="grid">
+                <a href="https://github.com/Alrafikri/ELT-HR-Analytics" class="card">
+                    <h3>ELT HR Analytics</h3>
+                    <p>Airflow + DBT + PostgreSQL. ELT pipeline with dimensional modeling (dim &amp; fact tables), Dockerized orchestration, and HR analytics dataset from Kaggle.</p>
+                    <span class="tag">Airflow</span>
+                    <span class="tag">DBT</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">Docker</span>
+                </a>
+                <a href="https://github.com/Alrafikri/CSV_UPLOADER" class="card">
+                    <h3>CSV Uploader</h3>
+                    <p>Web app for uploading, parsing, and storing CSV files into a database. Built with a Python backend and a frontend client.</p>
+                    <span class="tag">Python</span>
+                    <span class="tag">Docker</span>
+                </a>
+                <a href="https://github.com/Alrafikri/etl_project" class="card">
+                    <h3>ETL Project</h3>
+                    <p>Basic ETL pipeline using Python (psycopg2, pandas) and PostgreSQL — extract, transform, and load CSV data into a database.</p>
+                    <span class="tag">Python</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">Pandas</span>
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Data Analytics & BI</h2>
+            <div class="grid">
+                <a href="https://www.kaggle.com/code/alrafikri/food-delivery-data-analytics/notebook" class="card">
+                    <h3>Food Delivery Data Analytics</h3>
+                    <p>Exploratory analysis of DoorDash delivery data using Python.</p>
+                    <span class="tag">Python</span>
+                    <span class="tag">EDA</span>
+                </a>
+                <a href="https://drive.google.com/file/d/11bQpdM3r4rD9zcIgv13LxKJguwLopt2Y/view" class="card">
+                    <h3>Credit Scoring — Logistic Regression</h3>
+                    <p>Credit risk scoring model using logistic regression — from Rakamin bootcamp.</p>
+                    <span class="tag">ML</span>
+                    <span class="tag">Python</span>
+                </a>
+                <a href="https://github.com/Alrafikri/rakamin/blob/main/VIX/effective-consumer-targeting-lower-marketing-cost.ipynb" class="card">
+                    <h3>Effective Marketing Targeting</h3>
+                    <p>Customer segmentation and targeting using Naive Bayes classification to lower marketing costs.</p>
+                    <span class="tag">Classification</span>
+                    <span class="tag">Python</span>
+                </a>
+                <a href="https://www.kaggle.com/code/alrafikri/regression-housing-price-prediction-top-5" class="card">
+                    <h3>House Price Prediction</h3>
+                    <p>Regression model for housing prices — top 5% on Kaggle leaderboard.</p>
+                    <span class="tag">Regression</span>
+                    <span class="tag">Python</span>
+                </a>
+                <a href="https://github.com/Alrafikri/metabase-arm" class="card">
+                    <h3>Metabase on ARM (Apple Silicon)</h3>
+                    <p>Docker Compose setup for running Metabase BI on Apple Silicon (M1/M2/M3).</p>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Metabase</span>
+                    <span class="tag">BI</span>
+                </a>
+                <a href="https://drive.google.com/file/d/1RnTrS2zkYhID4Dd8HcmqkOT3UOJYu8aw/view" class="card">
+                    <h3>Transformer Fault Diagnosing with K-Means</h3>
+                    <p>Undergraduate thesis — clustering AI for electrical transformer diagnostics.</p>
+                    <span class="tag">Clustering</span>
+                    <span class="tag">Python</span>
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Business Analysis</h2>
+            <div class="grid">
+                <a href="https://drive.google.com/file/d/117eMUuDaGXrdUf1m93dalambAjmEMajy/view" class="card">
+                    <h3>Co-working Space Strategic Planning</h3>
+                    <p>Business strategy for a co-working space during the pandemic era.</p>
+                </a>
+                <a href="https://drive.google.com/file/d/1giJkuEoBgWXdilEBHXWR_jPb-AJ__iNm/view" class="card">
+                    <h3>The Introverted Barbershop</h3>
+                    <p>Barbershop concept designed for the pandemic — low-contact business model.</p>
+                </a>
+                <a href="https://drive.google.com/file/d/1-8NtimbIABgiGDOJD3ozFYtZ3ZQKuNIe/view" class="card">
+                    <h3>GoTo Collaboration Strategy</h3>
+                    <p>Strategic analysis of Gojek-Tokopedia merger from an MBA perspective.</p>
+                </a>
+                <a href="https://docs.google.com/spreadsheets/d/1JuhGVyzZ0wzkyAwUqcUlsBvkUDxguob3/edit" class="card">
+                    <h3>EV Charging Station Financial Model</h3>
+                    <p>Complete financial model — cash flow, P&L, and ROI analysis for EV charging business.</p>
+                    <span class="tag">Excel</span>
+                    <span class="tag">Financial Modeling</span>
+                </a>
+                <a href="https://drive.google.com/file/d/1JLPwltiaIssH2JQziFXxUUhEUBMZ36MZ/view" class="card">
+                    <h3>Dairy Yogurt Business Plan</h3>
+                    <p>Strategic plan and financial model for a yogurt startup.</p>
+                </a>
+                <a href="https://www.youtube.com/watch?v=WGiqf_FxGIg" class="card">
+                    <h3>Thesis Defense: Digital Banking vs Conventional Banks</h3>
+                    <p>MBA thesis on fintech development impact on banking sector stock returns.</p>
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Software Development</h2>
+            <div class="grid">
+                <a href="https://github.com/Alrafikri/rme-codex" class="card">
+                    <h3>RME Codex — Medical Records System</h3>
+                    <p>Full-stack electronic medical record system. FastAPI backend, Next.js frontend, Docker Compose orchestration, PostgreSQL database.</p>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">Next.js</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">PostgreSQL</span>
+                </a>
+                <a href="https://alrafikri.github.io/rock-paper-scissors-odin/" class="card">
+                    <h3>Rock Paper Scissors</h3>
+                    <p>Browser-based Rock Paper Scissors game built with vanilla JavaScript.</p>
+                    <span class="tag">JavaScript</span>
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Introduction</h2>
+            <div class="grid">
+                <a href="https://docs.google.com/presentation/d/1mw_Zhk-bNq6h26Oj5VB9OGk58Yayi2oB8b089btfLiQ/edit" class="card">
+                    <h3>Introduction Slide</h3>
+                    <p>Overview slide deck: Almas Rausan Fikri.</p>
+                </a>
+                <a href="http://alrafikri.tumblr.com" class="card">
+                    <h3>Casual Blog</h3>
+                    <p>Personal blog on Tumblr.</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Almas Rausan Fikri</p>
+        </div>
+    </footer>
 </body>
 </html>

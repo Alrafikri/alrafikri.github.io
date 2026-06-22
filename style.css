@@ -1,54 +1,138 @@
-body, html {
-	width: 100%;
-	height: 100%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.faded {
-  color: rgba(255, 255, 255, 0.8); 
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0f0f0f;
+    color: #e4e4e7;
+    line-height: 1.6;
 }
 
-hr {
-	max-width: 65px;
-	border-color: red;
-	border-width: 2px;
+.container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
-header.isi hr{
-	margin-top: 150px;
-	margin-bottom: 30px;
+header {
+    text-align: center;
+    padding: 64px 0 48px;
 }
 
-header.isi {
-	background-image: url("background.jpeg");
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	height: 100%;
+.avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+    border: 3px solid #27272a;
 }
 
-.btn {
-	text-transform: uppercase;
-	border-radius: 300px;
-	font-size: 20px;
-	font-weight: 700;
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
-.btn-primary{
-	background-color: red;
-	border-color: red
+.tagline {
+    color: #a1a1aa;
+    font-size: 16px;
+    margin-top: 4px;
 }
 
-.btn-primary:hover {
-	border-width: 5px;
-	border-color: orange;
-	background-color: orange;
-	cursor: pointer;
+.bio {
+    color: #a1a1aa;
+    font-size: 14px;
+    margin-top: 12px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.faded h1{
-	font-size: 40px;
+.badge-row {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
 }
 
-.btn-xl {
-  padding: 1rem 2rem; 
+.badge {
+    background: #27272a;
+    color: #e4e4e7;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.badge:hover {
+    background: #3f3f46;
+}
+
+section {
+    margin-bottom: 48px;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #f4f4f5;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card {
+    background: #18181b;
+    border: 1px solid #27272a;
+    border-radius: 10px;
+    padding: 16px 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.card:hover {
+    border-color: #52525b;
+    background: #1f1f23;
+}
+
+.card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.card p {
+    font-size: 13px;
+    color: #a1a1aa;
+    margin-bottom: 8px;
+}
+
+.tag {
+    display: inline-block;
+    background: #222;
+    color: #a1a1aa;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 4px;
+    margin-top: 4px;
+}
+
+footer {
+    text-align: center;
+    padding: 32px 0;
+    color: #52525b;
+    font-size: 13px;
 }
