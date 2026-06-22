@@ -4,17 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Almas Rausan Fikri — Portfolio</title>
+    <meta name="description" content="Data engineer and analyst with 4+ years experience in data engineering, analytics, and governance.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+
+<nav>
+    <div class="container">
+        <a href="/" class="logo">Almas Rausan Fikri</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/blog/">Blog</a>
+            <a href="mailto:almas.rausanf@gmail.com" class="nav-cta">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<div class="page">
+
+    <section class="hero">
         <div class="container">
             <img src="https://ugc.production.linktr.ee/tY0P5cPUSriXYQikn5ts_Ke8DjXr4bdtGn0rn?io=true&size=avatar-v3_0" alt="" class="avatar">
             <h1>Almas Rausan Fikri</h1>
-            <p class="tagline">Data Engineer & Analyst</p>
-            <p class="bio">Full-stack data professional with 4+ years of experience in data analysis, engineering, and governance.</p>
+            <div class="tagline">Data Engineer &amp; Analyst</div>
+            <p class="bio">Full-stack data professional with 4+ years of experience in data analysis, engineering, and governance. Building data infrastructure that scales.</p>
             <div class="badge-row">
                 <a href="mailto:almas.rausanf@gmail.com" class="badge">almas.rausanf@gmail.com</a>
                 <a href="https://www.linkedin.com/in/alrafikri/" class="badge">LinkedIn</a>
@@ -22,151 +37,161 @@
                 <a href="https://www.kaggle.com/alrafikri" class="badge">Kaggle</a>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main class="container">
-
-        <section>
+    <section class="section section-alt">
+        <div class="container">
             <h2>Data Engineering</h2>
             <div class="grid">
                 <a href="https://github.com/Alrafikri/ELT-HR-Analytics" class="card">
                     <h3>ELT HR Analytics</h3>
-                    <p>Airflow + DBT + PostgreSQL. ELT pipeline with dimensional modeling (dim &amp; fact tables), Dockerized orchestration, and HR analytics dataset from Kaggle.</p>
-                    <span class="tag">Airflow</span>
-                    <span class="tag">DBT</span>
-                    <span class="tag">PostgreSQL</span>
-                    <span class="tag">Docker</span>
+                    <p>Airflow + DBT + PostgreSQL ELT pipeline. Dockerized orchestration with dimensional modeling (dim &amp; fact tables) on HR data.</p>
+                    <div class="tags">
+                        <span class="tag">Airflow</span>
+                        <span class="tag">DBT</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Docker</span>
+                    </div>
                 </a>
                 <a href="https://github.com/Alrafikri/CSV_UPLOADER" class="card">
                     <h3>CSV Uploader</h3>
-                    <p>Web app for uploading, parsing, and storing CSV files into a database. Built with a Python backend and a frontend client.</p>
-                    <span class="tag">Python</span>
-                    <span class="tag">Docker</span>
+                    <p>Web app for parsing and storing CSV files into a database. Python backend with a frontend client, Dockerized.</p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Docker</span>
+                    </div>
                 </a>
                 <a href="https://github.com/Alrafikri/etl_project" class="card">
                     <h3>ETL Project</h3>
-                    <p>Basic ETL pipeline using Python (psycopg2, pandas) and PostgreSQL — extract, transform, and load CSV data into a database.</p>
-                    <span class="tag">Python</span>
-                    <span class="tag">PostgreSQL</span>
-                    <span class="tag">Pandas</span>
+                    <p>Foundational ETL pipeline — extract, transform, and load CSV data using Python (psycopg2, pandas) and PostgreSQL.</p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Pandas</span>
+                    </div>
                 </a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section>
-            <h2>Data Analytics & BI</h2>
+    <section class="section">
+        <div class="container">
+            <h2>Data Analytics &amp; BI</h2>
             <div class="grid">
                 <a href="https://www.kaggle.com/code/alrafikri/food-delivery-data-analytics/notebook" class="card">
-                    <h3>Food Delivery Data Analytics</h3>
+                    <h3>Food Delivery Analytics</h3>
                     <p>Exploratory analysis of DoorDash delivery data using Python.</p>
-                    <span class="tag">Python</span>
-                    <span class="tag">EDA</span>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">EDA</span></div>
                 </a>
                 <a href="https://drive.google.com/file/d/11bQpdM3r4rD9zcIgv13LxKJguwLopt2Y/view" class="card">
-                    <h3>Credit Scoring — Logistic Regression</h3>
-                    <p>Credit risk scoring model using logistic regression — from Rakamin bootcamp.</p>
-                    <span class="tag">ML</span>
-                    <span class="tag">Python</span>
+                    <h3>Credit Scoring</h3>
+                    <p>Logistic regression model for credit risk scoring — Rakamin bootcamp project.</p>
+                    <div class="tags"><span class="tag">ML</span><span class="tag">Python</span></div>
                 </a>
                 <a href="https://github.com/Alrafikri/rakamin/blob/main/VIX/effective-consumer-targeting-lower-marketing-cost.ipynb" class="card">
-                    <h3>Effective Marketing Targeting</h3>
-                    <p>Customer segmentation and targeting using Naive Bayes classification to lower marketing costs.</p>
-                    <span class="tag">Classification</span>
-                    <span class="tag">Python</span>
+                    <h3>Marketing Targeting</h3>
+                    <p>Customer segmentation using Naive Bayes to lower marketing costs.</p>
+                    <div class="tags"><span class="tag">Classification</span><span class="tag">Python</span></div>
                 </a>
                 <a href="https://www.kaggle.com/code/alrafikri/regression-housing-price-prediction-top-5" class="card">
                     <h3>House Price Prediction</h3>
-                    <p>Regression model for housing prices — top 5% on Kaggle leaderboard.</p>
-                    <span class="tag">Regression</span>
-                    <span class="tag">Python</span>
+                    <p>Regression model — top 5% on Kaggle leaderboard.</p>
+                    <div class="tags"><span class="tag">Regression</span><span class="tag">Python</span></div>
                 </a>
                 <a href="https://github.com/Alrafikri/metabase-arm" class="card">
-                    <h3>Metabase on ARM (Apple Silicon)</h3>
-                    <p>Docker Compose setup for running Metabase BI on Apple Silicon (M1/M2/M3).</p>
-                    <span class="tag">Docker</span>
-                    <span class="tag">Metabase</span>
-                    <span class="tag">BI</span>
+                    <h3>Metabase on ARM</h3>
+                    <p>Docker Compose setup for running Metabase BI on Apple Silicon.</p>
+                    <div class="tags"><span class="tag">Docker</span><span class="tag">Metabase</span><span class="tag">BI</span></div>
                 </a>
                 <a href="https://drive.google.com/file/d/1RnTrS2zkYhID4Dd8HcmqkOT3UOJYu8aw/view" class="card">
-                    <h3>Transformer Fault Diagnosing with K-Means</h3>
-                    <p>Undergraduate thesis — clustering AI for electrical transformer diagnostics.</p>
-                    <span class="tag">Clustering</span>
-                    <span class="tag">Python</span>
+                    <h3>Transformer Fault Diagnosis</h3>
+                    <p>Undergraduate thesis — K-Means clustering for electrical transformer diagnostics.</p>
+                    <div class="tags"><span class="tag">Clustering</span><span class="tag">Python</span></div>
                 </a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section>
+    <section class="section section-alt">
+        <div class="container">
             <h2>Business Analysis</h2>
             <div class="grid">
                 <a href="https://drive.google.com/file/d/117eMUuDaGXrdUf1m93dalambAjmEMajy/view" class="card">
-                    <h3>Co-working Space Strategic Planning</h3>
-                    <p>Business strategy for a co-working space during the pandemic era.</p>
+                    <h3>Coworking Space Strategy</h3>
+                    <p>Business strategy for a coworking space during the pandemic.</p>
                 </a>
                 <a href="https://drive.google.com/file/d/1giJkuEoBgWXdilEBHXWR_jPb-AJ__iNm/view" class="card">
                     <h3>The Introverted Barbershop</h3>
-                    <p>Barbershop concept designed for the pandemic — low-contact business model.</p>
+                    <p>Low-contact barbershop concept designed for the pandemic era.</p>
                 </a>
                 <a href="https://drive.google.com/file/d/1-8NtimbIABgiGDOJD3ozFYtZ3ZQKuNIe/view" class="card">
                     <h3>GoTo Collaboration Strategy</h3>
-                    <p>Strategic analysis of Gojek-Tokopedia merger from an MBA perspective.</p>
+                    <p>Strategic analysis of the Gojek-Tokopedia merger.</p>
                 </a>
                 <a href="https://docs.google.com/spreadsheets/d/1JuhGVyzZ0wzkyAwUqcUlsBvkUDxguob3/edit" class="card">
-                    <h3>EV Charging Station Financial Model</h3>
-                    <p>Complete financial model — cash flow, P&L, and ROI analysis for EV charging business.</p>
-                    <span class="tag">Excel</span>
-                    <span class="tag">Financial Modeling</span>
+                    <h3>EV Charging Financial Model</h3>
+                    <p>Cash flow, P&L, and ROI model for an EV charging station business.</p>
+                    <div class="tags"><span class="tag">Excel</span><span class="tag">Financial Modeling</span></div>
                 </a>
                 <a href="https://drive.google.com/file/d/1JLPwltiaIssH2JQziFXxUUhEUBMZ36MZ/view" class="card">
                     <h3>Dairy Yogurt Business Plan</h3>
                     <p>Strategic plan and financial model for a yogurt startup.</p>
                 </a>
                 <a href="https://www.youtube.com/watch?v=WGiqf_FxGIg" class="card">
-                    <h3>Thesis Defense: Digital Banking vs Conventional Banks</h3>
-                    <p>MBA thesis on fintech development impact on banking sector stock returns.</p>
+                    <h3>Thesis: Digital Banking vs Banks</h3>
+                    <p>MBA thesis on fintech impact on banking sector stock returns.</p>
                 </a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section>
+    <section class="section">
+        <div class="container">
             <h2>Software Development</h2>
             <div class="grid">
                 <a href="https://github.com/Alrafikri/rme-codex" class="card">
-                    <h3>RME Codex — Medical Records System</h3>
-                    <p>Full-stack electronic medical record system. FastAPI backend, Next.js frontend, Docker Compose orchestration, PostgreSQL database.</p>
-                    <span class="tag">FastAPI</span>
-                    <span class="tag">Next.js</span>
-                    <span class="tag">Docker</span>
-                    <span class="tag">PostgreSQL</span>
+                    <h3>RME Codex — Medical Records</h3>
+                    <p>Full-stack medical records system. FastAPI backend, Next.js frontend, Docker Compose, PostgreSQL.</p>
+                    <div class="tags">
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
                 </a>
                 <a href="https://alrafikri.github.io/rock-paper-scissors-odin/" class="card">
                     <h3>Rock Paper Scissors</h3>
-                    <p>Browser-based Rock Paper Scissors game built with vanilla JavaScript.</p>
-                    <span class="tag">JavaScript</span>
+                    <p>Browser game built with vanilla JavaScript.</p>
+                    <div class="tags"><span class="tag">JavaScript</span></div>
                 </a>
             </div>
-        </section>
-
-        <section>
-            <h2>Introduction</h2>
-            <div class="grid">
-                <a href="https://docs.google.com/presentation/d/1mw_Zhk-bNq6h26Oj5VB9OGk58Yayi2oB8b089btfLiQ/edit" class="card">
-                    <h3>Introduction Slide</h3>
-                    <p>Overview slide deck: Almas Rausan Fikri.</p>
-                </a>
-                <a href="http://alrafikri.tumblr.com" class="card">
-                    <h3>Casual Blog</h3>
-                    <p>Personal blog on Tumblr.</p>
-                </a>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Almas Rausan Fikri</p>
         </div>
-    </footer>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <h2>Latest from the Blog</h2>
+            <div class="blog-preview-grid">
+                <a href="blog/data-pipeline-trap.html" class="blog-card">
+                    <div class="date">June 22, 2026</div>
+                    <h3>The Data Pipeline Trap: Why Your Data Team Should Be at the Table on Day One</h3>
+                    <p>Buzzword tech stacks are chosen for product needs. Nobody asks how the data will be consumed six months later. Here's why that's a costly mistake.</p>
+                    <span class="read-more">Read more &rarr;</span>
+                </a>
+            </div>
+            <div class="section-footer">
+                <a href="blog/">View all posts &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Almas Rausan Fikri</p>
+    </div>
+</footer>
+
 </body>
 </html>
