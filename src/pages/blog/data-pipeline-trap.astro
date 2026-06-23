@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="The Data Pipeline Trap — Almas Rausan Fikri"
+  description="Why involving your data team early in tech stack decisions saves time, money, and your sanity."
+  currentPath="/blog"
+>
+  <article>
+    <header class="article-header">
+      <div class="container">
+        <div class="date">June 22, 2026</div>
+        <h1>The Data Pipeline Trap: Why Your Data Team Should Be at the Table on Day One</h1>
+      </div>
+    </header>
+
+    <div class="article-body">
+      <div class="container">
+        <p>Every time I join a company that's already 2–3 years in, I see the same pattern.</p>
+
+        <p>The engineering team picked a stack — maybe it's event-driven, maybe it's a specific message queue, maybe they went all-in on a NoSQL database because it was hot on Hacker News. The product shipped. Investors were happy.</p>
+
+        <p>But now someone wants a dashboard. And suddenly we're trying to reverse-engineer events back into a relational model. The JSON blobs in production have no schema. The "real-time" streaming platform they chose doesn't actually play nice with batch processing.</p>
+
+        <p>That's the <strong>data pipeline trap</strong>.</p>
+
+        <h2>The problem isn't the tools. It's when the tools were chosen.</h2>
+
+        <p>Buzzword tech stacks are almost always selected for the <em>product</em> use case — low latency, high throughput, whatever the frontend needs. Nobody asks: "How will this data be consumed six months from now?"</p>
+
+        <p>By the time a data team enters the picture, the architecture is already baked. You end up duct-taping connectors, writing custom exporters, and paying for middleware that exists only to translate between incompatible systems. Operational overhead balloons. Costs creep up. And the data team spends 80% of its time on plumbing instead of insights.</p>
+
+        <h2>The fix is simple: involve data earlier</h2>
+
+        <p>When CTOs and founders evaluate a tech stack, they should ask one more question: <em>"Can we export this data efficiently for analytics?"</em></p>
+
+        <p>Not "does it have an API" — everything has an API. But can we get clean, structured, timestamped data out without writing a custom pipeline? If the answer involves "we'll figure that out later," you're already digging the trap.</p>
+
+        <blockquote>
+          The best time to design your data infrastructure is before you write your first production query. The second best time is right now.
+        </blockquote>
+
+        <h2>In the age of AI, this is no longer optional</h2>
+
+        <p>Every company I talk to wants to "do AI." But AI runs on data — clean, documented, well-modeled data. If your data pipeline is a pile of workarounds, your AI initiatives will fail before they start.</p>
+
+        <p>You can't train on garbage. You can't get insights from a firehose of unstructured events that were never designed to be queried.</p>
+
+        <h3>First principles for data-ready architecture</h3>
+
+        <ul>
+          <li><strong>Choose storage that supports both transactional and analytical access patterns.</strong> PostgreSQL with foreign data wrappers, or a dedicated OLAP store alongside your OLTP database. Don't force one system to do both.</li>
+          <li><strong>Define schemas early</strong>, even if you expect them to change. An imperfect schema you iterate on beats a schemaless blob you can never query.</li>
+          <li><strong>Give the data team a seat at the architecture table</strong> before the stack is set in stone. A 30-minute conversation about data access patterns can save months of pipeline work.</li>
+          <li><strong>Think about how data will be used, not just how it will be stored.</strong> Who will query it? What questions will they ask? What latency do they need? The answers should shape your infrastructure choices.</li>
+        </ul>
+
+        <p>The companies that will win in the next five years are the ones that design their data infrastructure from day one — not as an afterthought, but as a first-class concern.</p>
+
+        <p>The data pipeline trap is expensive to escape. The best time to avoid it is before you fall in.</p>
+      </div>
+    </div>
+
+    <nav class="article-nav">
+      <div class="container">
+        <a href="/blog/">&larr; Back to blog</a>
+      </div>
+    </nav>
+  </article>
+</BaseLayout>

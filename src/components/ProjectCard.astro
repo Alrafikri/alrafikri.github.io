@@ -1,0 +1,20 @@
+---
+export interface Props {
+  href: string;
+  title: string;
+  description: string;
+  tags?: string[];
+}
+
+const { href, title, description, tags = [] } = Astro.props;
+---
+
+<a href={href} class="card" target="_blank" rel="noopener noreferrer">
+  <h3>{title}</h3>
+  <p>{description}</p>
+  {tags.length > 0 && (
+    <div class="tags">
+      {tags.map(tag => <span class="tag">{tag}</span>)}
+    </div>
+  )}
+</a>

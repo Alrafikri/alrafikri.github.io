@@ -1,0 +1,19 @@
+---
+export interface Props {
+  currentPath: string;
+}
+const { currentPath } = Astro.props;
+const isHome = currentPath === '/' || currentPath === '';
+const isBlog = currentPath.startsWith('/blog');
+---
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="/" class="logo">Almas Rausan Fikri</a>
+    <div class="nav-links">
+      <a href="/" aria-current={isHome ? 'page' : undefined}>Home</a>
+      <a href="/blog/" aria-current={isBlog ? 'page' : undefined}>Blog</a>
+      <a href="mailto:almas.rausanf@gmail.com" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>

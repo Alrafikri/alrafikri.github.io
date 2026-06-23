@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Blog — Almas Rausan Fikri"
+  description="Thoughts on data engineering, analytics, and building data infrastructure that scales."
+  currentPath="/blog"
+>
+  <section class="blog-header">
+    <div class="container">
+      <h1>Blog</h1>
+      <p>Thoughts on data engineering, analytics, and building infrastructure that scales.</p>
+    </div>
+  </section>
+
+  <section class="post-list">
+    <div class="container">
+      <a href="/blog/data-pipeline-trap/" class="post-item">
+        <div class="date">June 22, 2026</div>
+        <h2>The Data Pipeline Trap: Why Your Data Team Should Be at the Table on Day One</h2>
+        <p>Buzzword tech stacks are chosen for product needs. Nobody asks how the data will be consumed six months later. By the time a data team enters the picture, the architecture is already baked. Here's why involving data early saves time, money, and your sanity.</p>
+        <span class="read-more">Read more &rarr;</span>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,200 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import BlogPreview from '../components/BlogPreview.astro';
+---
+
+<BaseLayout
+  title="Almas Rausan Fikri — Portfolio"
+  description="Data engineer and analyst with 4+ years experience in data engineering, analytics, and governance."
+  currentPath="/"
+>
+  <section class="hero">
+    <div class="container">
+      <img
+        src="/images/avatar.jpg"
+        alt="Profile photo of Almas Rausan Fikri"
+        class="avatar"
+      />
+      <h1>Almas Rausan Fikri</h1>
+      <div class="tagline">Data Engineer &amp; Analyst</div>
+      <p class="bio">
+        Full-stack data professional with 4+ years of experience in data
+        analysis, engineering, and governance. Building data infrastructure that
+        scales.
+      </p>
+      <div class="badge-row">
+        <a href="mailto:almas.rausanf@gmail.com" class="badge"
+          >almas.rausanf@gmail.com</a
+        >
+        <a
+          href="https://www.linkedin.com/in/almas-rausan-fikri/"
+          class="badge"
+          target="_blank"
+          rel="noopener noreferrer"
+          >LinkedIn</a
+        >
+        <a
+          href="https://github.com/Alrafikri"
+          class="badge"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub</a
+        >
+        <a
+          href="https://www.kaggle.com/alrafikri"
+          class="badge"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Kaggle</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2>Data Engineering</h2>
+      <div class="grid">
+        <ProjectCard
+          href="https://github.com/Alrafikri/ELT-HR-Analytics"
+          title="ELT HR Analytics"
+          description="Airflow + DBT + PostgreSQL ELT pipeline. Dockerized orchestration with dimensional modeling (dim & fact tables) on HR data."
+          tags={["Airflow", "DBT", "PostgreSQL", "Docker"]}
+        />
+        <ProjectCard
+          href="https://github.com/Alrafikri/CSV_UPLOADER"
+          title="CSV Uploader"
+          description="Web app for parsing and storing CSV files into a database. Python backend with a frontend client, Dockerized."
+          tags={["Python", "Docker"]}
+        />
+        <ProjectCard
+          href="https://github.com/Alrafikri/etl_project"
+          title="ETL Project"
+          description="Foundational ETL pipeline — extract, transform, and load CSV data using Python (psycopg2, pandas) and PostgreSQL."
+          tags={["Python", "PostgreSQL", "Pandas"]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Data Analytics &amp; BI</h2>
+      <div class="grid">
+        <ProjectCard
+          href="https://www.kaggle.com/code/alrafikri/food-delivery-data-analytics/notebook"
+          title="Food Delivery Analytics"
+          description="Exploratory analysis of DoorDash delivery data using Python."
+          tags={["Python", "EDA"]}
+        />
+        <ProjectCard
+          href="https://drive.google.com/file/d/11bQpdM3r4rD9zcIgv13LxKJguwLopt2Y/view"
+          title="Credit Scoring"
+          description="Logistic regression model for credit risk scoring — Rakamin bootcamp project."
+          tags={["ML", "Python"]}
+        />
+        <ProjectCard
+          href="https://github.com/Alrafikri/rakamin/blob/main/VIX/effective-consumer-targeting-lower-marketing-cost.ipynb"
+          title="Marketing Targeting"
+          description="Customer segmentation using Naive Bayes to lower marketing costs."
+          tags={["Classification", "Python"]}
+        />
+        <ProjectCard
+          href="https://www.kaggle.com/code/alrafikri/regression-housing-price-prediction-top-5"
+          title="House Price Prediction"
+          description="Regression model — top 5% on Kaggle leaderboard."
+          tags={["Regression", "Python"]}
+        />
+        <ProjectCard
+          href="https://github.com/Alrafikri/metabase-arm"
+          title="Metabase on ARM"
+          description="Docker Compose setup for running Metabase BI on Apple Silicon."
+          tags={["Docker", "Metabase", "BI"]}
+        />
+        <ProjectCard
+          href="https://drive.google.com/file/d/1RnTrS2zkYhID4Dd8HcmqkOT3UOJYu8aw/view"
+          title="Transformer Fault Diagnosis"
+          description="Undergraduate thesis — K-Means clustering for electrical transformer diagnostics."
+          tags={["Clustering", "Python"]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2>Business Analysis</h2>
+      <div class="grid">
+        <ProjectCard
+          href="https://drive.google.com/file/d/117eMUuDaGXrdUf1m93dalambAjmEMajy/view"
+          title="Coworking Space Strategy"
+          description="Business strategy for a coworking space during the pandemic."
+        />
+        <ProjectCard
+          href="https://drive.google.com/file/d/1giJkuEoBgWXdilEBHXWR_jPb-AJ__iNm/view"
+          title="The Introverted Barbershop"
+          description="Low-contact barbershop concept designed for the pandemic era."
+        />
+        <ProjectCard
+          href="https://drive.google.com/file/d/1-8NtimbIABgiGDOJD3ozFYtZ3ZQKuNIe/view"
+          title="GoTo Collaboration Strategy"
+          description="Strategic analysis of the Gojek-Tokopedia merger."
+        />
+        <ProjectCard
+          href="https://docs.google.com/spreadsheets/d/1JuhGVyzZ0wzkyAwUqcUlsBvkUDxguob3/edit"
+          title="EV Charging Financial Model"
+          description="Cash flow, P&L, and ROI model for an EV charging station business."
+          tags={["Excel", "Financial Modeling"]}
+        />
+        <ProjectCard
+          href="https://drive.google.com/file/d/1JLPwltiaIssH2JQziFXxUUhEUBMZ36MZ/view"
+          title="Dairy Yogurt Business Plan"
+          description="Strategic plan and financial model for a yogurt startup."
+        />
+        <ProjectCard
+          href="https://www.youtube.com/watch?v=WGiqf_FxGIg"
+          title="Thesis: Digital Banking vs Banks"
+          description="MBA thesis on fintech impact on banking sector stock returns."
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Software Development</h2>
+      <div class="grid">
+        <ProjectCard
+          href="https://github.com/Alrafikri/rme-codex"
+          title="RME Codex — Medical Records"
+          description="Full-stack medical records system. FastAPI backend, Next.js frontend, Docker Compose, PostgreSQL."
+          tags={["FastAPI", "Next.js", "Docker", "PostgreSQL"]}
+        />
+        <ProjectCard
+          href="https://alrafikri.github.io/rock-paper-scissors-odin/"
+          title="Rock Paper Scissors"
+          description="Browser game built with vanilla JavaScript."
+          tags={["JavaScript"]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2>Latest from the Blog</h2>
+      <div class="blog-preview-grid">
+        <BlogPreview
+          href="/blog/data-pipeline-trap/"
+          date="June 22, 2026"
+          title="The Data Pipeline Trap: Why Your Data Team Should Be at the Table on Day One"
+          description="Buzzword tech stacks are chosen for product needs. Nobody asks how the data will be consumed six months later. Here's why that's a costly mistake."
+        />
+      </div>
+      <div class="section-footer">
+        <a href="/blog/">View all posts &rarr;</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
