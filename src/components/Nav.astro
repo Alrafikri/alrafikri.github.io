@@ -13,6 +13,14 @@ const isBlog = currentPath.startsWith('/blog');
     <div class="nav-links">
       <a href="/" aria-current={isHome ? 'page' : undefined}>Home</a>
       <a href="/blog/" aria-current={isBlog ? 'page' : undefined}>Blog</a>
+      <div class="nav-dropdown">
+        <a href="#" class="nav-dropdown-trigger" onclick="return false;">Projects ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="https://alrafikri.github.io/prechat-screening-agent/" target="_blank" rel="noopener noreferrer">
+            Prechat Screening Agent
+          </a>
+        </div>
+      </div>
       <a href="mailto:almas.rausanf@gmail.com" class="nav-cta">Contact</a>
     </div>
   </div>
