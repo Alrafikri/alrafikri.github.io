@@ -121,6 +121,7 @@
     gap: 4px;
 }
 
+.tag,
 .card .tag {
     display: inline-block;
     background: #1f1f23;
