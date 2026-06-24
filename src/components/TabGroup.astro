@@ -1,0 +1,100 @@
+---
+export interface Props {
+  tabs: string[];
+}
+
+const { tabs } = Astro.props;
+---
+
+<div class="tab-group">
+  <div class="tab-bar" role="tablist">
+    {tabs.map((label, i) => (
+      <button
+        class="tab-btn"
+        class:list={{ 'tab-active': i === 0 }}
+        role="tab"
+        aria-selected={i === 0}
+        aria-controls={`tab-panel-${i}`}
+        data-index={i}
+      >{label}</button>
+    ))}
+  </div>
+  <div class="tab-panels">
+    {
+      tabs.map((_, i) => (
+        <div
+          class="tab-panel"
+          class:list={{ 'tab-panel-active': i === 0 }}
+          id={`tab-panel-${i}`}
+          role="tabpanel"
+          data-index={i}
+        >
+          <slot name={`panel-${i}`} />
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  (() => {
+    class TabGroup {
+      constructor(el) {
+        this.el = el;
+        this.buttons = el.querySelectorAll('.tab-btn');
+        this.panels = el.querySelectorAll('.tab-panel');
+        this.active = 0;
+        this.touchStartX = 0;
+        this.touchEndX = 0;
+
+        // JS is active — hide all panels except the first
+        this.el.classList.add('is-ready');
+
+        this.buttons.forEach((btn) => {
+          btn.addEventListener('click', () => this.switchTo(parseInt(btn.dataset.index)));
+        });
+
+        el.addEventListener('touchstart', (e) => {
+          this.touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        el.addEventListener('touchend', (e) => {
+          this.touchEndX = e.changedTouches[0].screenX;
+          this.handleSwipe();
+        }, { passive: true });
+      }
+
+      switchTo(index) {
+        if (index === this.active) return;
+        const direction = index > this.active ? 'left' : 'right';
+
+        this.panels[this.active].classList.remove('tab-panel-active');
+        this.buttons[this.active].classList.remove('tab-active');
+        this.buttons[this.active].setAttribute('aria-selected', 'false');
+
+        const incoming = this.panels[index];
+        incoming.classList.remove('tab-slide-left', 'tab-slide-right');
+        incoming.classList.add(direction === 'left' ? 'tab-slide-right' : 'tab-slide-left');
+        void incoming.offsetWidth;
+        incoming.classList.remove('tab-slide-right', 'tab-slide-left');
+        incoming.classList.add('tab-panel-active');
+
+        this.buttons[index].classList.add('tab-active');
+        this.buttons[index].setAttribute('aria-selected', 'true');
+        this.active = index;
+      }
+
+      handleSwipe() {
+        const diff = this.touchStartX - this.touchEndX;
+        if (Math.abs(diff) < 50) return;
+        if (diff > 0 && this.active < this.panels.length - 1) {
+          this.switchTo(this.active + 1);
+        } else if (diff < 0 && this.active > 0) {
+          this.switchTo(this.active - 1);
+        }
+      }
+    }
+
+    document.querySelectorAll('.tab-group').forEach((el) => new TabGroup(el));
+  })();
+</script>
