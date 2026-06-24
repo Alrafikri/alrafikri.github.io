@@ -4,6 +4,7 @@ export interface Props {
 }
 
 const { tabs } = Astro.props;
+const count = Math.min(tabs.length, 10);
 ---
 
 <div class="tab-group">
@@ -20,19 +21,54 @@ const { tabs } = Astro.props;
     ))}
   </div>
   <div class="tab-panels">
-    {
-      tabs.map((_, i) => (
-        <div
-          class="tab-panel"
-          class:list={{ 'tab-panel-active': i === 0 }}
-          id={`tab-panel-${i}`}
-          role="tabpanel"
-          data-index={i}
-        >
-          <slot name={`panel-${i}`} />
-        </div>
-      ))
-    }
+    <div class="tab-panel" class:list={{ 'tab-panel-active': count > 0 }} id="tab-panel-0" role="tabpanel" data-index="0">
+      <slot name="panel-0" />
+    </div>
+    {count > 1 && (
+      <div class="tab-panel" id="tab-panel-1" role="tabpanel" data-index="1">
+        <slot name="panel-1" />
+      </div>
+    )}
+    {count > 2 && (
+      <div class="tab-panel" id="tab-panel-2" role="tabpanel" data-index="2">
+        <slot name="panel-2" />
+      </div>
+    )}
+    {count > 3 && (
+      <div class="tab-panel" id="tab-panel-3" role="tabpanel" data-index="3">
+        <slot name="panel-3" />
+      </div>
+    )}
+    {count > 4 && (
+      <div class="tab-panel" id="tab-panel-4" role="tabpanel" data-index="4">
+        <slot name="panel-4" />
+      </div>
+    )}
+    {count > 5 && (
+      <div class="tab-panel" id="tab-panel-5" role="tabpanel" data-index="5">
+        <slot name="panel-5" />
+      </div>
+    )}
+    {count > 6 && (
+      <div class="tab-panel" id="tab-panel-6" role="tabpanel" data-index="6">
+        <slot name="panel-6" />
+      </div>
+    )}
+    {count > 7 && (
+      <div class="tab-panel" id="tab-panel-7" role="tabpanel" data-index="7">
+        <slot name="panel-7" />
+      </div>
+    )}
+    {count > 8 && (
+      <div class="tab-panel" id="tab-panel-8" role="tabpanel" data-index="8">
+        <slot name="panel-8" />
+      </div>
+    )}
+    {count > 9 && (
+      <div class="tab-panel" id="tab-panel-9" role="tabpanel" data-index="9">
+        <slot name="panel-9" />
+      </div>
+    )}
   </div>
 </div>
 
@@ -47,7 +83,6 @@ const { tabs } = Astro.props;
         this.touchStartX = 0;
         this.touchEndX = 0;
 
-        // JS is active — hide all panels except the first
         this.el.classList.add('is-ready');
 
         this.buttons.forEach((btn) => {

@@ -4,6 +4,7 @@ import ProjectCard from '../components/ProjectCard.astro';
 import ExperienceCard from '../components/ExperienceCard.astro';
 import EduCard from '../components/EduCard.astro';
 import BlogPreview from '../components/BlogPreview.astro';
+import TabGroup from '../components/TabGroup.astro';
 ---
 
 <BaseLayout
@@ -54,292 +55,277 @@ import BlogPreview from '../components/BlogPreview.astro';
     </div>
   </section>
 
+  <!-- CV Tabs -->
   <section class="section">
     <div class="container">
-      <h2>Work Experience</h2>
-      <ExperienceCard
-        role="Founding Data Team"
-        company="HitPay"
-        location="Remote, Singapore"
-        period="Mar 2025 - Present"
-        type="FinTech"
-        description={[
-          "Founding data engineer. Built end-to-end data pipeline serving 10 marts tables, reducing reporting time by 75%.",
-          "Cut data tool costs by $3k/Q by migrating from Fivetran to Airbyte.",
-        ]}
-      />
-      <ExperienceCard
-        role="Data Quality Analyst"
-        company="PT Multidaya Teknologi Nusantara"
-        location="Remote, Indonesia"
-        period="Jun 2023 - Feb 2025"
-        type="AgriTech"
-        description={[
-          "Implemented Data Quality Management System: developed comprehensive data quality tools including monitoring dashboard, data requirement dictionary, data quality SOPs and policies.",
-          "Solved 20+ data quality issues, documenting 2000+ data quality requirements.",
-        ]}
-      />
-      <ExperienceCard
-        role="Business Intelligence"
-        company="Shopee"
-        location="Jakarta, Indonesia"
-        period="Aug 2022 - Jun 2023"
-        type="E-Commerce"
-        description={[
-          "Collaborated with stakeholders from Shopee Business Development team, aiding in decision making for display ads project.",
-          "Increased Shopee\'s Ads revenue by IDR 500 million/month.",
-        ]}
-      />
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <h2>Earlier Experience</h2>
-      <div class="grid">
-        <ExperienceCard
-          role="Accounting"
-          company="CampusInn Hotel"
-          location="Yogyakarta, Indonesia"
-          period="Jun - Aug 2021"
-          type="Contract"
-          description={[
-            "Built financial reporting ERP PoC in Google Sheets.",
-          ]}
-        />
-        <ExperienceCard
-          role="Electrical Engineering"
-          company="Pertamina Refinery Unit VI"
-          location="Balongan, Indonesia"
-          period="Jan - Feb 2018"
-          type="Apprenticeship"
-          description={[
-            "Improved protection system reliability by 10-12%.",
-          ]}
-        />
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2>Education</h2>
-      <EduCard
-        school="Universitas Gadjah Mada (UGM)"
-        degree="M.B.A."
-        major="Financial Management"
-        gpa="3.90/4.00"
-        period="Sep 2020 - Jan 2022"
-      />
-      <EduCard
-        school="Universitas Gadjah Mada (UGM)"
-        degree="B. Eng."
-        major="Electrical Engineering"
-        gpa="3.53/4.00"
-        period="Aug 2015 - Apr 2019"
-      />
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <h2>Tech Stack</h2>
-      <div class="skills-grid">
-        <div class="skill-group">
-          <h3>Data Analysis</h3>
-          <div class="skill-tags">
-            <span class="tag">Metabase</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Google Sheets</span>
-            <span class="tag">Tableau</span>
-            <span class="tag">Superset</span>
-            <span class="tag">Looker</span>
+      <TabGroup tabs={['Experience', 'Education', 'Skills & Achievement']}>
+        <div slot="panel-0">
+          <!-- Work Experience -->
+          <ExperienceCard
+            role="Founding Data Team"
+            company="HitPay"
+            location="Remote, Singapore"
+            period="Mar 2025 - Present"
+            type="FinTech"
+            description={[
+              "Founding data engineer. Built end-to-end data pipeline serving 10 marts tables, reducing reporting time by 75%.",
+              "Cut data tool costs by $3k/Q by migrating from Fivetran to Airbyte.",
+            ]}
+          />
+          <ExperienceCard
+            role="Data Quality Analyst"
+            company="PT Multidaya Teknologi Nusantara"
+            location="Remote, Indonesia"
+            period="Jun 2023 - Feb 2025"
+            type="AgriTech"
+            description={[
+              "Implemented Data Quality Management System: developed comprehensive data quality tools including monitoring dashboard, data requirement dictionary, data quality SOPs and policies.",
+              "Solved 20+ data quality issues, documenting 2000+ data quality requirements.",
+            ]}
+          />
+          <ExperienceCard
+            role="Business Intelligence"
+            company="Shopee"
+            location="Jakarta, Indonesia"
+            period="Aug 2022 - Jun 2023"
+            type="E-Commerce"
+            description={[
+              "Collaborated with stakeholders from Shopee Business Development team, aiding in decision making for display ads project.",
+              "Increased Shopee's Ads revenue by IDR 500 million/month.",
+            ]}
+          />
+          <!-- Earlier Experience -->
+          <h3 style="margin: 20px 0 10px; font-size: 15px; color: #a1a1aa;">Earlier Experience</h3>
+          <div class="grid">
+            <ExperienceCard
+              role="Accounting"
+              company="CampusInn Hotel"
+              location="Yogyakarta, Indonesia"
+              period="Jun - Aug 2021"
+              type="Contract"
+              description={[
+                "Built financial reporting ERP PoC in Google Sheets.",
+              ]}
+            />
+            <ExperienceCard
+              role="Electrical Engineering"
+              company="Pertamina Refinery Unit VI"
+              location="Balongan, Indonesia"
+              period="Jan - Feb 2018"
+              type="Apprenticeship"
+              description={[
+                "Improved protection system reliability by 10-12%.",
+              ]}
+            />
           </div>
         </div>
-        <div class="skill-group">
-          <h3>Data Engineering</h3>
-          <div class="skill-tags">
-            <span class="tag">Airbyte</span>
-            <span class="tag">Fivetran</span>
-            <span class="tag">ClickHouse</span>
-            <span class="tag">Snowflake</span>
-            <span class="tag">DuckDB</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">MySQL</span>
-            <span class="tag">Vitess</span>
-            <span class="tag">BigQuery</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Python</span>
-            <span class="tag">Airflow</span>
-            <span class="tag">DBT</span>
-            <span class="tag">Great Expectations</span>
-          </div>
+        <div slot="panel-1">
+          <EduCard
+            school="Universitas Gadjah Mada (UGM)"
+            degree="M.B.A."
+            major="Financial Management"
+            gpa="3.90/4.00"
+            period="Sep 2020 - Jan 2022"
+          />
+          <EduCard
+            school="Universitas Gadjah Mada (UGM)"
+            degree="B. Eng."
+            major="Electrical Engineering"
+            gpa="3.53/4.00"
+            period="Aug 2015 - Apr 2019"
+          />
         </div>
-        <div class="skill-group">
-          <h3>Data Science</h3>
-          <div class="skill-tags">
-            <span class="tag">Python</span>
-            <span class="tag">XGBoost</span>
-            <span class="tag">Logistic Regression</span>
-            <span class="tag">K-Means</span>
-            <span class="tag">Streamlit</span>
-            <span class="tag">Feature Generation</span>
+        <div slot="panel-2">
+          <h3 style="font-size: 15px; font-weight: 600; color: #10b981; margin-bottom: 12px;">Tech Stack</h3>
+          <div class="skills-grid">
+            <div class="skill-group">
+              <h3>Data Analysis</h3>
+              <div class="skill-tags">
+                <span class="tag">Metabase</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Google Sheets</span>
+                <span class="tag">Tableau</span>
+                <span class="tag">Superset</span>
+                <span class="tag">Looker</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>Data Engineering</h3>
+              <div class="skill-tags">
+                <span class="tag">Airbyte</span>
+                <span class="tag">Fivetran</span>
+                <span class="tag">ClickHouse</span>
+                <span class="tag">Snowflake</span>
+                <span class="tag">DuckDB</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Vitess</span>
+                <span class="tag">BigQuery</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Python</span>
+                <span class="tag">Airflow</span>
+                <span class="tag">DBT</span>
+                <span class="tag">Great Expectations</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>Data Science</h3>
+              <div class="skill-tags">
+                <span class="tag">Python</span>
+                <span class="tag">XGBoost</span>
+                <span class="tag">Logistic Regression</span>
+                <span class="tag">K-Means</span>
+                <span class="tag">Streamlit</span>
+                <span class="tag">Feature Generation</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>Other</h3>
+              <div class="skill-tags">
+                <span class="tag">PHP Laravel</span>
+                <span class="tag">Financial Modelling</span>
+                <span class="tag">Business Analysis</span>
+              </div>
+            </div>
           </div>
+          <h3 style="font-size: 15px; font-weight: 600; color: #10b981; margin: 20px 0 12px;">Achievements &amp; Certifications</h3>
+          <ul class="cert-list">
+            <li>Data Science Bootcamp Batch 23, Rakamin Academy - <strong>Best Graduate</strong> (May 2022)</li>
+            <li>Back-end Engineer Bootcamp, Refactory (August 2020)</li>
+          </ul>
         </div>
-        <div class="skill-group">
-          <h3>Other</h3>
-          <div class="skill-tags">
-            <span class="tag">PHP Laravel</span>
-            <span class="tag">Financial Modelling</span>
-            <span class="tag">Business Analysis</span>
-          </div>
-        </div>
-      </div>
+      </TabGroup>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <h2>Achievements &amp; Certifications</h2>
-      <ul class="cert-list">
-        <li>Data Science Bootcamp Batch 23, Rakamin Academy - <strong>Best Graduate</strong> (May 2022)</li>
-        <li>Back-end Engineer Bootcamp, Refactory (August 2020)</li>
-      </ul>
-    </div>
-  </section>
-
+  <!-- Project Tabs -->
   <section class="section section-alt">
     <div class="container">
-      <h2>Data Engineering</h2>
-      <div class="grid">
-        <ProjectCard
-          href="https://github.com/Alrafikri/ELT-HR-Analytics"
-          title="ELT HR Analytics"
-          description="Airflow + DBT + PostgreSQL ELT pipeline. Dockerized orchestration with dimensional modeling (dim & fact tables) on HR data."
-          tags={["Airflow", "DBT", "PostgreSQL", "Docker"]}
-        />
-        <ProjectCard
-          href="https://github.com/Alrafikri/CSV_UPLOADER"
-          title="CSV Uploader"
-          description="Web app for parsing and storing CSV files into a database. Python backend with a frontend client, Dockerized."
-          tags={["Python", "Docker"]}
-        />
-        <ProjectCard
-          href="https://github.com/Alrafikri/etl_project"
-          title="ETL Project"
-          description="Foundational ETL pipeline — extract, transform, and load CSV data using Python (psycopg2, pandas) and PostgreSQL."
-          tags={["Python", "PostgreSQL", "Pandas"]}
-        />
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2>Data Analytics &amp; BI</h2>
-      <div class="grid">
-        <ProjectCard
-          href="https://www.kaggle.com/code/alrafikri/food-delivery-data-analytics/notebook"
-          title="Food Delivery Analytics"
-          description="Exploratory analysis of DoorDash delivery data using Python."
-          tags={["Python", "EDA"]}
-        />
-        <ProjectCard
-          href="https://drive.google.com/file/d/11bQpdM3r4rD9zcIgv13LxKJguwLopt2Y/view"
-          title="Credit Scoring"
-          description="Logistic regression model for credit risk scoring — Rakamin bootcamp project."
-          tags={["ML", "Python"]}
-        />
-        <ProjectCard
-          href="https://github.com/Alrafikri/rakamin/blob/main/VIX/effective-consumer-targeting-lower-marketing-cost.ipynb"
-          title="Marketing Targeting"
-          description="Customer segmentation using Naive Bayes to lower marketing costs."
-          tags={["Classification", "Python"]}
-        />
-        <ProjectCard
-          href="https://www.kaggle.com/code/alrafikri/regression-housing-price-prediction-top-5"
-          title="House Price Prediction"
-          description="Regression model — top 5% on Kaggle leaderboard."
-          tags={["Regression", "Python"]}
-        />
-        <ProjectCard
-          href="https://github.com/Alrafikri/metabase-arm"
-          title="Metabase on ARM"
-          description="Docker Compose setup for running Metabase BI on Apple Silicon."
-          tags={["Docker", "Metabase", "BI"]}
-        />
-        <ProjectCard
-          href="https://drive.google.com/file/d/1RnTrS2zkYhID4Dd8HcmqkOT3UOJYu8aw/view"
-          title="Transformer Fault Diagnosis"
-          description="Undergraduate thesis — K-Means clustering for electrical transformer diagnostics."
-          tags={["Clustering", "Python"]}
-        />
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <h2>Business Analysis</h2>
-      <div class="grid">
-        <ProjectCard
-          href="https://drive.google.com/file/d/117eMUuDaGXrdUf1m93dalambAjmEMajy/view"
-          title="Coworking Space Strategy"
-          description="Business strategy for a coworking space during the pandemic."
-        />
-        <ProjectCard
-          href="https://drive.google.com/file/d/1giJkuEoBgWXdilEBHXWR_jPb-AJ__iNm/view"
-          title="The Introverted Barbershop"
-          description="Low-contact barbershop concept designed for the pandemic era."
-        />
-        <ProjectCard
-          href="https://drive.google.com/file/d/1-8NtimbIABgiGDOJD3ozFYtZ3ZQKuNIe/view"
-          title="GoTo Collaboration Strategy"
-          description="Strategic analysis of the Gojek-Tokopedia merger."
-        />
-        <ProjectCard
-          href="https://docs.google.com/spreadsheets/d/1JuhGVyzZ0wzkyAwUqcUlsBvkUDxguob3/edit"
-          title="EV Charging Financial Model"
-          description="Cash flow, P&L, and ROI model for an EV charging station business."
-          tags={["Excel", "Financial Modeling"]}
-        />
-        <ProjectCard
-          href="https://drive.google.com/file/d/1JLPwltiaIssH2JQziFXxUUhEUBMZ36MZ/view"
-          title="Dairy Yogurt Business Plan"
-          description="Strategic plan and financial model for a yogurt startup."
-        />
-        <ProjectCard
-          href="https://www.youtube.com/watch?v=WGiqf_FxGIg"
-          title="Thesis: Digital Banking vs Banks"
-          description="MBA thesis on fintech impact on banking sector stock returns."
-        />
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2>Software Development</h2>
-      <div class="grid">
-        <ProjectCard
-          href="https://github.com/Alrafikri/rme-codex"
-          title="RME Codex — Medical Records"
-          description="Full-stack medical records system. FastAPI backend, Next.js frontend, Docker Compose, PostgreSQL."
-          tags={["FastAPI", "Next.js", "Docker", "PostgreSQL"]}
-        />
-        <ProjectCard
-          href="https://github.com/Alrafikri/prechat-screening-agent"
-          title="Prechat Screening Agent"
-          description="AI-powered pre-chat screening agent that qualifies leads before human conversation."
-          tags={["AI", "Chat", "Automation"]}
-        />
-        <ProjectCard
-          href="https://alrafikri.github.io/rock-paper-scissors-odin/"
-          title="Rock Paper Scissors"
-          description="Browser game built with vanilla JavaScript."
-          tags={["JavaScript"]}
-        />
-      </div>
+      <TabGroup tabs={['AI Engineering', 'Data Engineering', 'Data Analyst & BI', 'Business Analysis', 'Software Development']}>
+        <div slot="panel-0">
+          <div class="grid">
+            <ProjectCard
+              href="https://github.com/Alrafikri/prechat-screening-agent"
+              title="Prechat Screening Agent"
+              description="AI-powered pre-chat screening agent that qualifies leads before human conversation."
+              tags={["AI", "Chat", "Automation"]}
+            />
+          </div>
+        </div>
+        <div slot="panel-1">
+          <div class="grid">
+            <ProjectCard
+              href="https://github.com/Alrafikri/ELT-HR-Analytics"
+              title="ELT HR Analytics"
+              description="Airflow + DBT + PostgreSQL ELT pipeline. Dockerized orchestration with dimensional modeling (dim & fact tables) on HR data."
+              tags={["Airflow", "DBT", "PostgreSQL", "Docker"]}
+            />
+            <ProjectCard
+              href="https://github.com/Alrafikri/CSV_UPLOADER"
+              title="CSV Uploader"
+              description="Web app for parsing and storing CSV files into a database. Python backend with a frontend client, Dockerized."
+              tags={["Python", "Docker"]}
+            />
+            <ProjectCard
+              href="https://github.com/Alrafikri/etl_project"
+              title="ETL Project"
+              description="Foundational ETL pipeline — extract, transform, and load CSV data using Python (psycopg2, pandas) and PostgreSQL."
+              tags={["Python", "PostgreSQL", "Pandas"]}
+            />
+          </div>
+        </div>
+        <div slot="panel-2">
+          <div class="grid">
+            <ProjectCard
+              href="https://www.kaggle.com/code/alrafikri/food-delivery-data-analytics/notebook"
+              title="Food Delivery Analytics"
+              description="Exploratory analysis of DoorDash delivery data using Python."
+              tags={["Python", "EDA"]}
+            />
+            <ProjectCard
+              href="https://drive.google.com/file/d/11bQpdM3r4rD9zcIgv13LxKJguwLopt2Y/view"
+              title="Credit Scoring"
+              description="Logistic regression model for credit risk scoring — Rakamin bootcamp project."
+              tags={["ML", "Python"]}
+            />
+            <ProjectCard
+              href="https://github.com/Alrafikri/rakamin/blob/main/VIX/effective-consumer-targeting-lower-marketing-cost.ipynb"
+              title="Marketing Targeting"
+              description="Customer segmentation using Naive Bayes to lower marketing costs."
+              tags={["Classification", "Python"]}
+            />
+            <ProjectCard
+              href="https://www.kaggle.com/code/alrafikri/regression-housing-price-prediction-top-5"
+              title="House Price Prediction"
+              description="Regression model — top 5% on Kaggle leaderboard."
+              tags={["Regression", "Python"]}
+            />
+            <ProjectCard
+              href="https://github.com/Alrafikri/metabase-arm"
+              title="Metabase on ARM"
+              description="Docker Compose setup for running Metabase BI on Apple Silicon."
+              tags={["Docker", "Metabase", "BI"]}
+            />
+            <ProjectCard
+              href="https://drive.google.com/file/d/1RnTrS2zkYhID4Dd8HcmqkOT3UOJYu8aw/view"
+              title="Transformer Fault Diagnosis"
+              description="Undergraduate thesis — K-Means clustering for electrical transformer diagnostics."
+              tags={["Clustering", "Python"]}
+            />
+          </div>
+        </div>
+        <div slot="panel-3">
+          <div class="grid">
+            <ProjectCard
+              href="https://drive.google.com/file/d/117eMUuDaGXrdUf1m93dalambAjmEMajy/view"
+              title="Coworking Space Strategy"
+              description="Business strategy for a coworking space during the pandemic."
+            />
+            <ProjectCard
+              href="https://drive.google.com/file/d/1giJkuEoBgWXdilEBHXWR_jPb-AJ__iNm/view"
+              title="The Introverted Barbershop"
+              description="Low-contact barbershop concept designed for the pandemic era."
+            />
+            <ProjectCard
+              href="https://drive.google.com/file/d/1-8NtimbIABgiGDOJD3ozFYtZ3ZQKuNIe/view"
+              title="GoTo Collaboration Strategy"
+              description="Strategic analysis of the Gojek-Tokopedia merger."
+            />
+            <ProjectCard
+              href="https://docs.google.com/spreadsheets/d/1JuhGVyzZ0wzkyAwUqcUlsBvkUDxguob3/edit"
+              title="EV Charging Financial Model"
+              description="Cash flow, P&L, and ROI model for an EV charging station business."
+              tags={["Excel", "Financial Modeling"]}
+            />
+            <ProjectCard
+              href="https://drive.google.com/file/d/1JLPwltiaIssH2JQziFXxUUhEUBMZ36MZ/view"
+              title="Dairy Yogurt Business Plan"
+              description="Strategic plan and financial model for a yogurt startup."
+            />
+            <ProjectCard
+              href="https://www.youtube.com/watch?v=WGiqf_FxGIg"
+              title="Thesis: Digital Banking vs Banks"
+              description="MBA thesis on fintech impact on banking sector stock returns."
+            />
+          </div>
+        </div>
+        <div slot="panel-4">
+          <div class="grid">
+            <ProjectCard
+              href="https://github.com/Alrafikri/rme-codex"
+              title="RME Codex — Medical Records"
+              description="Full-stack medical records system. FastAPI backend, Next.js frontend, Docker Compose, PostgreSQL."
+              tags={["FastAPI", "Next.js", "Docker", "PostgreSQL"]}
+            />
+            <ProjectCard
+              href="https://alrafikri.github.io/rock-paper-scissors-odin/"
+              title="Rock Paper Scissors"
+              description="Browser game built with vanilla JavaScript."
+              tags={["JavaScript"]}
+            />
+          </div>
+        </div>
+      </TabGroup>
     </div>
   </section>
 
