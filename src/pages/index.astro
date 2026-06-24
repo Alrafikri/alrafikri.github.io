@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import ExperienceCard from '../components/ExperienceCard.astro';
+import EduCard from '../components/EduCard.astro';
 import BlogPreview from '../components/BlogPreview.astro';
 ---
 
@@ -19,9 +21,9 @@ import BlogPreview from '../components/BlogPreview.astro';
       <h1>Almas Rausan Fikri</h1>
       <div class="tagline">Data Engineer &amp; Analyst</div>
       <p class="bio">
-        Full-stack data professional with 4+ years of experience in data
-        analysis, engineering, and governance. Building data infrastructure that
-        scales.
+        Data Engineer &amp; Analyst with 4+ years experience in data analysis,
+        data engineering and data governance. Skilled in data analysis (w/ SQL
+        and various BI Tools), data pipeline (ETL/ELT), data transformation, and data model design.
       </p>
       <div class="badge-row">
         <a href="mailto:almas.rausanf@gmail.com" class="badge"
@@ -49,6 +51,160 @@ import BlogPreview from '../components/BlogPreview.astro';
           >Kaggle</a
         >
       </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Work Experience</h2>
+      <ExperienceCard
+        role="Founding Data Team"
+        company="HitPay"
+        location="Remote, Singapore"
+        period="Mar 2025 - Present"
+        type="FinTech"
+        description={[
+          "Founding data engineer. Built end-to-end data pipeline serving 10 marts tables, reducing reporting time by 75%.",
+          "Cut data tool costs by $3k/Q by migrating from Fivetran to Airbyte.",
+        ]}
+      />
+      <ExperienceCard
+        role="Data Quality Analyst"
+        company="PT Multidaya Teknologi Nusantara"
+        location="Remote, Indonesia"
+        period="Jun 2023 - Feb 2025"
+        type="AgriTech"
+        description={[
+          "Implemented Data Quality Management System: developed comprehensive data quality tools including monitoring dashboard, data requirement dictionary, data quality SOPs and policies.",
+          "Solved 20+ data quality issues, documenting 2000+ data quality requirements.",
+        ]}
+      />
+      <ExperienceCard
+        role="Business Intelligence"
+        company="Shopee"
+        location="Jakarta, Indonesia"
+        period="Aug 2022 - Jun 2023"
+        type="E-Commerce"
+        description={[
+          "Collaborated with stakeholders from Shopee Business Development team, aiding in decision making for display ads project.",
+          "Increased Shopee\'s Ads revenue by IDR 500 million/month.",
+        ]}
+      />
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2>Earlier Experience</h2>
+      <div class="grid">
+        <ExperienceCard
+          role="Accounting"
+          company="CampusInn Hotel"
+          location="Yogyakarta, Indonesia"
+          period="Jun - Aug 2021"
+          type="Contract"
+          description={[
+            "Built financial reporting ERP PoC in Google Sheets.",
+          ]}
+        />
+        <ExperienceCard
+          role="Electrical Engineering"
+          company="Pertamina Refinery Unit VI"
+          location="Balongan, Indonesia"
+          period="Jan - Feb 2018"
+          type="Apprenticeship"
+          description={[
+            "Improved protection system reliability by 10-12%.",
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Education</h2>
+      <EduCard
+        school="Universitas Gadjah Mada (UGM)"
+        degree="M.B.A."
+        major="Financial Management"
+        gpa="3.90/4.00"
+        period="Sep 2020 - Jan 2022"
+      />
+      <EduCard
+        school="Universitas Gadjah Mada (UGM)"
+        degree="B. Eng."
+        major="Electrical Engineering"
+        gpa="3.53/4.00"
+        period="Aug 2015 - Apr 2019"
+      />
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2>Tech Stack</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Data Analysis</h3>
+          <div class="skill-tags">
+            <span class="tag">Metabase</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Google Sheets</span>
+            <span class="tag">Tableau</span>
+            <span class="tag">Superset</span>
+            <span class="tag">Looker</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Data Engineering</h3>
+          <div class="skill-tags">
+            <span class="tag">Airbyte</span>
+            <span class="tag">Fivetran</span>
+            <span class="tag">ClickHouse</span>
+            <span class="tag">Snowflake</span>
+            <span class="tag">DuckDB</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Vitess</span>
+            <span class="tag">BigQuery</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Python</span>
+            <span class="tag">Airflow</span>
+            <span class="tag">DBT</span>
+            <span class="tag">Great Expectations</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Data Science</h3>
+          <div class="skill-tags">
+            <span class="tag">Python</span>
+            <span class="tag">XGBoost</span>
+            <span class="tag">Logistic Regression</span>
+            <span class="tag">K-Means</span>
+            <span class="tag">Streamlit</span>
+            <span class="tag">Feature Generation</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Other</h3>
+          <div class="skill-tags">
+            <span class="tag">PHP Laravel</span>
+            <span class="tag">Financial Modelling</span>
+            <span class="tag">Business Analysis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Achievements &amp; Certifications</h2>
+      <ul class="cert-list">
+        <li>Data Science Bootcamp Batch 23, Rakamin Academy - <strong>Best Graduate</strong> (May 2022)</li>
+        <li>Back-end Engineer Bootcamp, Refactory (August 2020)</li>
+      </ul>
     </div>
   </section>
 
@@ -170,6 +326,12 @@ import BlogPreview from '../components/BlogPreview.astro';
           title="RME Codex — Medical Records"
           description="Full-stack medical records system. FastAPI backend, Next.js frontend, Docker Compose, PostgreSQL."
           tags={["FastAPI", "Next.js", "Docker", "PostgreSQL"]}
+        />
+        <ProjectCard
+          href="https://github.com/Alrafikri/prechat-screening-agent"
+          title="Prechat Screening Agent"
+          description="AI-powered pre-chat screening agent that qualifies leads before human conversation."
+          tags={["AI", "Chat", "Automation"]}
         />
         <ProjectCard
           href="https://alrafikri.github.io/rock-paper-scissors-odin/"

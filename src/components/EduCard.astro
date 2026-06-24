@@ -1,0 +1,21 @@
+---
+export interface Props {
+  school: string;
+  degree: string;
+  major: string;
+  gpa: string;
+  period: string;
+}
+
+const { school, degree, major, gpa, period } = Astro.props;
+---
+
+<div class="edu-card">
+  <div class="edu-header">
+    <h3>{school}</h3>
+    <span class="edu-period">{period}</span>
+  </div>
+  <div class="edu-meta">
+    {degree} in {major} | GPA: {gpa}
+  </div>
+</div>
