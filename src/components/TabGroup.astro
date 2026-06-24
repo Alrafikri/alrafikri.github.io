@@ -11,6 +11,7 @@ const count = Math.min(tabs.length, 10);
   <div class="tab-bar" role="tablist">
     {tabs.map((label, i) => (
       <button
+        type="button"
         class="tab-btn"
         class:list={{ 'tab-active': i === 0 }}
         role="tab"
@@ -103,16 +104,13 @@ const count = Math.min(tabs.length, 10);
         if (index === this.active) return;
         const direction = index > this.active ? 'left' : 'right';
 
-        this.panels[this.active].classList.remove('tab-panel-active');
+        this.panels[this.active].classList.remove('tab-panel-active', 'tab-slide-left', 'tab-slide-right');
         this.buttons[this.active].classList.remove('tab-active');
         this.buttons[this.active].setAttribute('aria-selected', 'false');
 
         const incoming = this.panels[index];
-        incoming.classList.remove('tab-slide-left', 'tab-slide-right');
-        incoming.classList.add(direction === 'left' ? 'tab-slide-right' : 'tab-slide-left');
-        void incoming.offsetWidth;
-        incoming.classList.remove('tab-slide-right', 'tab-slide-left');
         incoming.classList.add('tab-panel-active');
+        incoming.classList.add(direction === 'left' ? 'tab-slide-right' : 'tab-slide-left');
 
         this.buttons[index].classList.add('tab-active');
         this.buttons[index].setAttribute('aria-selected', 'true');

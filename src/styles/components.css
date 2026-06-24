@@ -531,17 +531,17 @@
     animation: tabFadeIn 0.25s ease;
 }
 
-@keyframes tabFadeIn {
-    from { opacity: 0; transform: translateY(4px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-.tab-slide-left {
+.tab-group.is-ready .tab-panel-active.tab-slide-left {
     animation: slideFromLeft 0.25s ease forwards;
 }
 
-.tab-slide-right {
+.tab-group.is-ready .tab-panel-active.tab-slide-right {
     animation: slideFromRight 0.25s ease forwards;
+}
+
+@keyframes tabFadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideFromLeft {
