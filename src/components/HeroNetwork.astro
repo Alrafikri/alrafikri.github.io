@@ -26,6 +26,11 @@ if (divider) divider.style.cssText = 'position:absolute;left:0;top:10%;bottom:10
 const container = hero.querySelector('.container');
 if (container) {
   container.style.cssText += 'flex:1;min-width:0;padding-right:40px';
+  // Fix centered content to align left with the new layout
+  const bio = container.querySelector('.bio');
+  if (bio) bio.style.cssText = 'font-size:15px;color:#a1a1aa;max-width:500px;margin:0 0 24px 0';
+  const badgeRow = container.querySelector('.badge-row');
+  if (badgeRow) badgeRow.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-start';
 }
 
 const w = canvas.offsetWidth || 400;
