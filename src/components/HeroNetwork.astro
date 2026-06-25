@@ -1,28 +1,32 @@
-<canvas id="hero-network" aria-hidden="true" tabindex="-1"></canvas>
+<div id="hero-network-wrap" aria-hidden="true">
+  <canvas id="hero-network" tabindex="-1"></canvas>
+</div>
 
 <script>
 import * as THREE from 'three';
 
 document.addEventListener('DOMContentLoaded', function() {
-const canvas = document.getElementById('hero-network');
-if (!canvas) return;
 if (!('matchMedia' in globalThis) || !matchMedia('(min-width: 768px)').matches) return;
+
+const wrap = document.getElementById('hero-network-wrap');
+const canvas = document.getElementById('hero-network');
+if (!wrap || !canvas) return;
 
 const hero = canvas.closest('.hero');
 if (!hero) return;
 
-hero.style.position = 'relative';
-canvas.style.cssText =
-  'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;display:block';
+// Reposition canvas to the right side
+hero.style.cssText += 'display:flex;align-items:center;text-align:left;position:relative;overflow:hidden';
+wrap.style.cssText = 'flex:none;width:45%;height:400px;position:relative';
+canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;display:block';
 
 const container = hero.querySelector('.container');
 if (container) {
-  container.style.position = 'relative';
-  container.style.zIndex = '1';
+  container.style.cssText += 'flex:1;min-width:0;padding-right:40px';
 }
 
-const w = hero.offsetWidth;
-const h = hero.offsetHeight;
+const w = canvas.offsetWidth || 400;
+const h = canvas.offsetHeight || 400;
 canvas.width = w;
 canvas.height = h;
 
@@ -75,21 +79,21 @@ const lineMat = new THREE.LineBasicMaterial({
 let mouseX = 0;
 let mouseY = 0;
 document.addEventListener('mousemove', (e) => {
-  const rect = hero.getBoundingClientRect();
+  const rect = wrap.getBoundingClientRect();
   mouseX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
   mouseY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
 });
 
 const ro = new ResizeObserver(() => {
-  const nw = hero.offsetWidth;
-  const nh = hero.offsetHeight;
+  const nw = canvas.offsetWidth || 400;
+  const nh = canvas.offsetHeight || 400;
   canvas.width = nw;
   canvas.height = nh;
   camera.aspect = nw / nh;
   camera.updateProjectionMatrix();
   renderer.setSize(nw, nh);
 });
-ro.observe(hero);
+ro.observe(wrap);
 
 let lines = null;
 
