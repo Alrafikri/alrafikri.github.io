@@ -1,4 +1,5 @@
 <div id="hero-network-wrap" aria-hidden="true">
+  <div id="hero-network-divider"></div>
   <canvas id="hero-network" tabindex="-1"></canvas>
 </div>
 
@@ -19,6 +20,8 @@ if (!hero) return;
 hero.style.cssText += 'display:flex;align-items:center;text-align:left;position:relative;overflow:hidden';
 wrap.style.cssText = 'flex:none;width:45%;height:400px;position:relative';
 canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;display:block';
+const divider = document.getElementById('hero-network-divider');
+if (divider) divider.style.cssText = 'position:absolute;left:0;top:10%;bottom:10%;width:1px;background:linear-gradient(to bottom,transparent,#06b6d480,#06b6d480,transparent);z-index:2';
 
 const container = hero.querySelector('.container');
 if (container) {
