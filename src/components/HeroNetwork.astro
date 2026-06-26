@@ -4,10 +4,9 @@
 </div>
 
 <script>
-import * as THREE from 'three';
-
-document.addEventListener('DOMContentLoaded', function() {
+(async function() {
 if (!('matchMedia' in globalThis) || !matchMedia('(min-width: 768px)').matches) return;
+const THREE = await import('three').then(m => m.default);
 
 const wrap = document.getElementById('hero-network-wrap');
 const canvas = document.getElementById('hero-network');
@@ -160,5 +159,5 @@ function animate() {
 }
 
 animate();
-});
+})();
 </script>
