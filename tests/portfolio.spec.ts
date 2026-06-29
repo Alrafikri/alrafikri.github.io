@@ -96,11 +96,11 @@ test.describe('404 page', () => {
   });
 });
 
-test.describe('3D canvas (desktop)', () => {
-  test('hero-network canvas exists on desktop width', async ({ page }) => {
+test.describe('Hero canvas (desktop)', () => {
+  test('hero canvas exists on desktop width', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 });
     await page.goto('/');
-    const canvas = page.locator('#hero-network');
+    const canvas = page.locator('#hero-canvas');
     await expect(canvas).toBeAttached();
   });
 });
