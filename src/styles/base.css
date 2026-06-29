@@ -6,10 +6,15 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #0a0a0a;
-    color: #d4d4d8;
+    background: #0f0e17;
+    color: #c4b5a0;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif JP', 'Inter', serif;
+    color: #f5f0e8;
 }
 
 .container {
