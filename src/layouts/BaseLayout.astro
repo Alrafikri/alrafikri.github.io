@@ -2,6 +2,7 @@
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import BackToTop from '../components/BackToTop.astro';
+import HeroCanvas from '../components/HeroCanvas.astro';
 import '../styles/base.css';
 import '../styles/layout.css';
 import '../styles/components.css';
@@ -31,6 +32,7 @@ const { title, description, currentPath = '/' } = Astro.props;
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
   <body>
+    <HeroCanvas />
     <Nav currentPath={currentPath} />
     <div class="page">
       <slot />
