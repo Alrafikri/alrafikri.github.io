@@ -36,13 +36,31 @@
 
 @media (max-width: 640px) {
     .site-nav .nav-links {
-        gap: 12px;
+        gap: 10px;
         flex: 1;
         justify-content: center;
     }
     .site-nav .container {
         justify-content: center;
     }
+    .site-nav .nav-links a,
+    .site-nav .nav-dropdown-trigger {
+        font-size: 12px;
+        white-space: nowrap;
+    }
+    .nav-cta {
+        padding: 4px 10px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    .site-nav .container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .site-nav .container::-webkit-scrollbar { display: none; }
 }
 
 .site-nav .nav-links a {
@@ -55,13 +73,6 @@
 
 .site-nav .nav-links a:hover {
     color: #f5f0e8;
-}
-
-@media (max-width: 640px) {
-    .site-nav .nav-links a,
-    .site-nav .nav-dropdown-trigger {
-        white-space: nowrap;
-    }
 }
 
 .nav-cta {
