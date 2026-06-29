@@ -35,7 +35,14 @@
 }
 
 @media (max-width: 640px) {
-    .site-nav .nav-links { gap: 12px; }
+    .site-nav .nav-links {
+        gap: 12px;
+        flex: 1;
+        justify-content: center;
+    }
+    .site-nav .container {
+        justify-content: center;
+    }
 }
 
 .site-nav .nav-links a {

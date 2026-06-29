@@ -18,16 +18,11 @@
     display: block;
   }
 
-  @media (max-width: 768px) {
-    #hero-canvas-wrap {
-      display: none;
-    }
-  }
 </style>
 
 <script>
 (function() {
-  if (!('matchMedia' in globalThis) || !matchMedia('(min-width: 768px)').matches) return;
+  if (typeof matchMedia === 'undefined') return;
 
   const canvas = document.getElementById('hero-canvas');
   const wrap = document.getElementById('hero-canvas-wrap');
