@@ -24,10 +24,18 @@
     letter-spacing: -0.3px;
 }
 
+@media (max-width: 640px) {
+    .site-nav .logo { display: none; }
+}
+
 .site-nav .nav-links {
     display: flex;
     align-items: center;
     gap: 24px;
+}
+
+@media (max-width: 640px) {
+    .site-nav .nav-links { gap: 12px; }
 }
 
 .site-nav .nav-links a {
@@ -40,6 +48,13 @@
 
 .site-nav .nav-links a:hover {
     color: #f5f0e8;
+}
+
+@media (max-width: 640px) {
+    .site-nav .nav-links a,
+    .site-nav .nav-dropdown-trigger {
+        white-space: nowrap;
+    }
 }
 
 .nav-cta {
