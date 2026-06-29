@@ -29,13 +29,15 @@
   if (!canvas || !wrap) return;
 
   const ctx = canvas.getContext('2d');
-  let w, h;
+  let w, h, rafId = null;
 
   function resize() {
+    const dpr = window.devicePixelRatio || 1;
     w = wrap.offsetWidth || window.innerWidth;
     h = wrap.offsetHeight || 600;
-    canvas.width = w;
-    canvas.height = h;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    ctx.scale(dpr, dpr);
   }
   resize();
   window.addEventListener('resize', resize);
@@ -260,19 +262,26 @@
     }
 
     // Shooting stars
-    shootingStarTimer++;
-    if (shootingStarTimer > 300 + Math.random() * 200) {
-      if (!shootingStar) {
+    if (!shootingStar) {
+      shootingStarTimer++;
+      if (shootingStarTimer > 300 + Math.random() * 200) {
         spawnShootingStar();
+        shootingStarTimer = 0;
       }
-      shootingStarTimer = 0;
     }
     drawShootingStar();
 
     ctx.globalAlpha = 1;
-    requestAnimationFrame(animate);
+    rafId = requestAnimationFrame(animate);
   }
 
-  animate();
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      if (!rafId) rafId = requestAnimationFrame(animate);
+    } else {
+      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+    }
+  }, { threshold: 0 });
+  observer.observe(wrap);
 })();
 </script>

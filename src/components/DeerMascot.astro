@@ -36,7 +36,7 @@
     margin-bottom: 10px;
     position: relative;
     max-width: 220px;
-    animation: speechFade 8s ease-in-out infinite;
+    animation: speechFade 12s ease-in-out infinite;
   }
 
   .deer-speech::after {
@@ -67,9 +67,9 @@
   }
 
   @keyframes speechFade {
-    0%, 20% { opacity: 1; }
-    30%, 90% { opacity: 0; }
-    95%, 100% { opacity: 1; }
+    0%, 13% { opacity: 1; }
+    17%, 83% { opacity: 0; }
+    87%, 100% { opacity: 1; }
   }
 
   @media (max-width: 768px) {
@@ -98,6 +98,7 @@
   const lines = [
     'データ…めんどくさい…',
     'I solve puzzles. Just… let me do it my way.',
+    '',
   ];
 
   let index = 0;
@@ -105,6 +106,6 @@
   setInterval(() => {
     index = (index + 1) % lines.length;
     textEl.textContent = lines[index];
-  }, 8000);
+  }, 12000);
 })();
 </script>
